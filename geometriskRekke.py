@@ -22,3 +22,4 @@ a1 = 1
 verdi = standardForm(round(s(100, a1, k)))
 
 print(f'S100 = {verdi[0]} x 10^{verdi[1]}')
+#
