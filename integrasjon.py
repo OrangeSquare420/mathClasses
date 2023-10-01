@@ -1,23 +1,30 @@
 def f(x):
-    return 10*x**3-x**2+3*x-6
-
-def integral(funksjon, a, b):
-    
-    step = float(0.0001) # Nøyaktigheten
-    sum = float(0) # Variabel for å lagre sum
-    
-    teller = 0 # Teller opp hvor lang programmet er kommet
-    
-    while teller < b:
-        
-        sum += funksjon(a+teller)
-        teller += step
-    
-    returnValue = sum / 10000
-    
-    if returnValue <= 0:
-        returnValue = returnValue * -1
-    return returnValue # Dele på antall punkter
+    return x**2
 
 
-print(integral(f, 0, 2))
+def sum(funk, a, b)
+    # Klarerer variabel for sum
+    S = 0
+    
+    # Klarerer variabel for index / steg
+    i = 0
+    
+    # Antall rektangler / steg / n / tallet i toppen
+    n = 1000
+
+    # Finner delta x / størrelsen på hvert steg / bunnlinjen i rektangel
+    d = (b-a)/n
+
+    # Kjører gjennom løkken frem til indeks er nådd antall rektangler
+    while i < n:
+        # Finner bestemt x-verdi bbasert på indeks og stegstørrelse
+        x_i = a + d*i
+
+        # Finner summen av tidligere sum og legger til 
+        # funksjonsverdien multiplisert med steg-størrelse
+        S = S + funk(x_i) * d
+
+        # Legger til en indeks
+        i += 1
+
+    return S
