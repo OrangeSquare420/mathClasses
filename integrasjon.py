@@ -1,8 +1,8 @@
 def f(x):
-    return x**2
+    return -1 * (x-2) * (x-3) * (x-5)
 
 
-def sum(funk, a, b)
+def sum(funk, a, b):
     # Klarerer variabel for sum
     S = 0
     
@@ -10,7 +10,7 @@ def sum(funk, a, b)
     i = 0
     
     # Antall rektangler / steg / n / tallet i toppen
-    n = 1000
+    n = 10000
 
     # Finner delta x / størrelsen på hvert steg / bunnlinjen i rektangel
     d = (b-a)/n
@@ -28,3 +28,9 @@ def sum(funk, a, b)
         i += 1
 
     return S
+
+values = [sum(f,0,2), sum(f,2,3), sum(f,3,5)]
+
+
+
+print(sum(f,0,5))
